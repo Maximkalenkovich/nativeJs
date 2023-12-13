@@ -1,19 +1,23 @@
 import {mult, splitIntoWords, sum} from "./value01";
 
-export {}
+let a: number
+let b : number
+let c: number
+beforeEach(()=>{
+    a = 1
+    b = 2
 
+})
 test('sum be corret', ()=>{
-    const a = 1
-    const b = 2
     const result1 = sum(a,b)
+    a = 100
     expect(result1).toBe(3)
 
 })
 
 test('mult be corret', ()=>{
-    const a = 1
-    const b = 2
     const result1 = mult(a,b)
+    a=100
     expect(result1).toBe(2)
 })
 

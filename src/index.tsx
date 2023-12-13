@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {value01} from "./01/value01";
+import {splitIntoWords} from "./01/value01";
 
-let a = value01
+
+const sentense = 'hello my friend'
+splitIntoWords(sentense)
 
 const root = ReactDOM.createRoot(
 
