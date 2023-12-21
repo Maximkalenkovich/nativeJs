@@ -65,6 +65,3 @@ export const getStreetsTtilesOfHouses = (hous: HousesType[]) =>{
 export const createMessages = (house: HousesType[]) => {
     return house.map(h => `Hello guys from ${h.address.street.title}`)
 }
-export const createуMessages = (house: HousesType[]) => {
-    return house.map(h => `Hello guys from ${h.address.street.title}`)
-}
