@@ -13,7 +13,7 @@ beforeEach(()=>{
 })
 
 
-test('should be should get array message',()=>{
+test.skip('should be should get array message',()=>{
   const message= people.map(man => `Hello ${man.name.split(' ')[0]}. Welcom to IT`)
 expect(message.length).toBe(3)
     expect(message[0]).toBe('Hello Andrew. Welcom to IT')

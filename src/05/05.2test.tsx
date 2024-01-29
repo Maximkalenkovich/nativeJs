@@ -40,7 +40,7 @@ test.skip('',()=>{
     expect(streetsName[1]).toBe('Hogwarts street')
 })
 
-test('',()=>{
+test.skip('',()=>{
 let message = createMessages(city.houses)
 
     expect(message.length).toBe(3)

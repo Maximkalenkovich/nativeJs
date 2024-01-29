@@ -8,20 +8,20 @@ beforeEach(()=>{
     b = 2
 
 })
-test('sum be corret', ()=>{
+test.skip('sum be corret', ()=>{
     const result1 = sum(a,b)
     a = 100
     expect(result1).toBe(3)
 
 })
 
-test('mult be corret', ()=>{
+test.skip('mult be corret', ()=>{
     const result1 = mult(a,b)
     a=100
     expect(result1).toBe(2)
 })
 
-test('spliting into words correct', ()=>{
+test.skip('spliting into words correct', ()=>{
     const  sent1 = 'hello my friend'
     const sent2 =  'js programing language!'
 

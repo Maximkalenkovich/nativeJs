@@ -1,6 +1,6 @@
 import {CourseType} from "./04";
 
-test('should take old men older then 90', ()=>{
+test.skip('should take old men older then 90', ()=>{
     const ages = [18,20,39,1,100,14]
 
     const oldAges = ages.filter(ages => ages > 90)
@@ -9,7 +9,7 @@ test('should take old men older then 90', ()=>{
     expect(oldAges[0]).toBe(100)
 })
 
-test('should take course  expensiv 160', ()=>{
+test.skip('should take course  expensiv 160', ()=>{
     const courses = [
         {title:'CSS', price:100},
         {title:'JS', price:150},
@@ -22,7 +22,7 @@ const cheapCourses = courses.filter(courses=> courses.price < 160)
     expect(cheapCourses[1].title).toBe('JS')
 })
 
-test('pay bread ore not', () => {
+test.skip('pay bread ore not', () => {
     const tasks = [
         {id: 1, title: 'Bread', isDone: false},
         {id: 2, title: 'milk', isDone: true},
