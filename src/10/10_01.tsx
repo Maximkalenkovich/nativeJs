@@ -1,4 +1,3 @@
-import exp from "constants";
 
 export type UserTypee = {
     name:string
@@ -13,9 +12,18 @@ export type UserWithLaptop = UserTypee & {
     laptop: LaptopType
 }
 
+
+export type WithCompanyType = {
+    companies:Array<{title:string,id:number}>
+}
+
+
 export type UserWithBook = UserTypee & {
     books: string[]
 }
+
+
+
 
 export type NumbersType = {
     obj1: {
@@ -32,9 +40,6 @@ export type NumbersType = {
     };
     array: number[];
 };
-
-
-
 export function moveUser(u: UserWithLaptop, city:string){
 
   return  {
@@ -92,6 +97,14 @@ export function changeArray(n: NumbersType, oldNum: number,newNum:number){
 }
 
 
+export const deleteBook = (u:UserWithLaptop & UserWithBook, oldBook: string) =>{
+    return({...u,
+              books:u.books.filter(b => b !==oldBook )})
+}
 
+export const updateCompanyTitle = (user:WithCompanyType, companyId: number,newTitle:string)=>{
+    return{...user,
+    companies: user.companies.map(c => c.id == companyId ? {...c,title:newTitle}: c)}
+}
 
 

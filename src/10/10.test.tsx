@@ -1,13 +1,14 @@
 import {
     addBook, changeArray,
     changeBook,
-    changeHoses,
+    changeHoses, deleteBook,
     moveUser,
-    NumbersType,
+    NumbersType, updateCompanyTitle,
     upgradeLaptope,
     UserWithBook,
-    UserWithLaptop
+    UserWithLaptop, WithCompanyType,
 } from "./10_01";
+import exp from "constants";
 
 
 test.skip('change laptop', ()=>{
@@ -156,4 +157,80 @@ const newArray = changeArray(numbers, 56, 777)
     expect(newArray.array).toContain(777);
 
 })
+
+test.skip('delete new book', ()=> {
+    let user: UserWithLaptop & UserWithBook={
+        name:'Dimych',
+        hair:32,
+        address:{
+            city:'MINSK',
+            house: 12
+        },
+        laptop:{
+            title:'zenbook'
+        },
+        books:['html','css','js','react']
+    }
+
+
+    const remooveBook = deleteBook(user, 'js')
+
+
+    expect(user).not.toBe(remooveBook)
+    expect(user.laptop).toBe(remooveBook.laptop)
+    expect(user.address.house).toBe(remooveBook.address.house)
+    expect(user.books).not.toBe(remooveBook.books)
+    expect(remooveBook.books[2]).toBe('react')
+    expect(user.books.length).toBe(4)
+    expect(remooveBook.books.length).toBe(3)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+test("companies", () => {
+    let user: WithCompanyType & UserWithLaptop= {
+        name: "Dimych",
+        hair: 32,
+        address: {
+            city: "MINSK",
+            house: 12
+        },
+        laptop: {
+            title: "zenbook"
+        },
+        companies: [
+            { title: "it-incubator", id: 1 },
+            { title: "epam", id: 2 }
+        ]
+    };
+
+    const userCopy = updateCompanyTitle(user, 2, "EPAM") as WithCompanyType & UserWithLaptop
+
+    expect(user).not.toBe(userCopy);
+    expect(user.companies).not.toBe(userCopy.companies);
+    expect(userCopy.companies[1].title).toBe("EPAM");
+
+});
+
+
+
+
+
+
+
+
+
 
